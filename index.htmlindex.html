@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#ff7eb3,#ff758c,#ffb347);
+font-family:Arial, sans-serif;
+text-align:center;
+}
+
+h1{
+font-size:80px;
+color:white;
+text-shadow:0 0 20px rgba(0,0,0,0.4);
+animation:pop 2s infinite alternate;
+margin:0;
+}
+
+h2{
+font-size:40px;
+color:white;
+margin-top:10px;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes pop{
+from{transform:scale(1);}
+to{transform:scale(1.15);}
+}
+
+@keyframes glow{
+from{text-shadow:0 0 5px white;}
+to{text-shadow:0 0 25px yellow;}
+}
+
+/* balloons */
+.balloon{
+position:absolute;
+bottom:-150px;
+width:60px;
+height:80px;
+border-radius:50%;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* confetti */
+.confetti{
+position:absolute;
+width:10px;
+height:10px;
+animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* fireworks sparkle */
+.spark{
+position:absolute;
+width:6px;
+height:6px;
+border-radius:50%;
+background:white;
+animation:spark 2s linear infinite;
+}
+
+@keyframes spark{
+0%{transform:scale(0);opacity:1;}
+100%{transform:scale(3);opacity:0;}
+}
+
+/* zelda characters */
+.characters{
+position:absolute;
+bottom:0;
+display:flex;
+gap:40px;
+animation:bounce 2s infinite alternate;
+}
+
+.characters img{
+height:120px;
+}
+
+@keyframes bounce{
+from{transform:translateY(0);}
+to{transform:translateY(-20px);}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+<h2>fuhhh tionnn</h2>
+
+<div class="characters">
+<img src="https://upload.wikimedia.org/wikipedia/en/6/6f/Link_%28The_Legend_of_Zelda%29.png">
+<img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Princess_Zelda.png">
+<img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Ganondorf.png">
+</div>
+
+<script>
+
+// balloons
+for(let i=0;i<15;i++){
+let b=document.createElement("div");
+b.className="balloon";
+b.style.left=Math.random()*100+"vw";
+b.style.background="hsl("+Math.random()*360+",80%,60%)";
+b.style.animationDuration=(6+Math.random()*5)+"s";
+document.body.appendChild(b);
+}
+
+// confetti
+for(let i=0;i<120;i++){
+let c=document.createElement("div");
+c.className="confetti";
+c.style.left=Math.random()*100+"vw";
+c.style.background="hsl("+Math.random()*360+",100%,50%)";
+c.style.animationDuration=(3+Math.random()*3)+"s";
+document.body.appendChild(c);
+}
+
+// fireworks sparks
+for(let i=0;i<30;i++){
+let s=document.createElement("div");
+s.className="spark";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+document.body.appendChild(s);
+}
+
+</script>
+
+</body>
+</html>
